@@ -1,0 +1,98 @@
+h2 {
+    margin: auto;
+    width: 8rem;
+}
+
+.main {
+    width: 100%;
+}
+
+.main .container {
+    width: 80%;
+    min-height: 3rem;
+    background-color: #6060f6;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    transition: all .32s;
+    padding: 1rem 2rem;
+}
+
+.container:hover {
+    background-color: #24249c;
+}
+
+.container input {
+    display: none;
+}
+
+.container label {
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: 90%;
+    position: relative;
+}
+
+.container img {
+    height: 0;
+    width: 100%;
+    opacity: 0;
+}
+
+
+.container input~label::after {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container input:checked~img,
+.container input:hover~img {
+    cursor: pointer;
+    width: 60%;
+    height: 30rem;
+    transition: all .3s ease-in-out;
+    margin: auto;
+    opacity: 1;
+}
+
+.container input:hover~label,
+.container input:checked~label {
+    cursor: pointer;
+    color: #d1e6f8;
+}
+
+
+.main .container input:hover~label::after,
+.main .container input:checked~label::after {
+    transform: rotate(45deg);
+}
+
+.main:hover .container input~label::after {
+    display: block;
+    content: "+";
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        max-width: 850px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .container {
+        width: 100%;
+    }
+}
