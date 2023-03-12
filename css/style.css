@@ -8,7 +8,7 @@ h2 {
 }
 
 .main .container {
-    width: 80%;
+    max-width: 800px;
     min-height: 3rem;
     background-color: #6060f6;
     margin: 10px auto;
@@ -18,6 +18,7 @@ h2 {
     flex-flow: row wrap;
     transition: all .32s;
     padding: 1rem 2rem;
+    border-radius: 1.2rem;
 }
 
 .container:hover {
@@ -50,6 +51,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all ease-in .3s;
 }
 
 .container input:checked~img,
@@ -68,26 +70,31 @@ h2 {
     color: #d1e6f8;
 }
 
+.main:hover .container input~label::after {
+    display: block;
+    content: "+";
+}
 
 .main .container input:hover~label::after,
 .main .container input:checked~label::after {
     transform: rotate(45deg);
 }
 
-.main:hover .container input~label::after {
-    display: block;
-    content: "+";
-}
-
 @media screen and (max-width: 991px) {
+    .main {
+        max-width: 980px;
+
+    }
+
     .container {
-        max-width: 850px;
+        max-width: 780px;
+        margin: auto;
     }
 }
 
 @media screen and (max-width: 767px) {
     .container {
-        max-width: 600px;
+        max-width: 620px;
     }
 }
 
